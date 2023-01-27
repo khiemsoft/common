@@ -1,0 +1,15 @@
+{
+  "name": "coin98-common-function",
+  "version": "1.0.0",
+  "description": "Coin98 Wallet Common Function",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "numbro": "^2.3.6",
+    "uuid": "^9.0.0"
+  },
+  "author": "coin98",
+  "license": "MIT"
+}
