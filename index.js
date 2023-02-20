@@ -90,6 +90,10 @@ const countDots = (number, letter = '\\.') => {
   return (string.match(RegExp(letter, 'g')) || []).length
 }
 
+export const compareString = (value, value2) => {
+  return lowerCase(value) === lowerCase(value2)
+}
+
 // Convert 2e8 to real number
 export const scientificToDecimal = (num) => {
   const sign = Math.sign(num)
@@ -137,6 +141,7 @@ const validateNumber = (strNumber) => {
 }
 
 export default {
+  compareString,
   validateEmail,
   countDots,
   validateNumber,
