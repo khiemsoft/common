@@ -90,8 +90,12 @@ const countDots = (number, letter = '\\.') => {
   return (string.match(RegExp(letter, 'g')) || []).length
 }
 
-export const compareString = (value, value2) => {
+const compareString = (value, value2) => {
   return lowerCase(value) === lowerCase(value2)
+}
+
+export const compareNumber = (value, value2) => {
+  return parseFloat(value) === parseFloat(value2)
 }
 
 // Convert 2e8 to real number
@@ -141,6 +145,7 @@ const validateNumber = (strNumber) => {
 }
 
 export default {
+  compareNumber,
   compareString,
   validateEmail,
   countDots,
