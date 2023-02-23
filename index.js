@@ -56,7 +56,7 @@ const formatBilion = (labelValue, mssa = 2) => {
   return numFormat === 'N/A' ? '' : numFormat
 }
 
-export const generateRandom = (limit = 16, isNumber) => {
+const generateRandom = (limit = 16, isNumber) => {
   let text = ''
   const possible = isNumber ? '123456789' : 'abcdefghijklmnopqrstuvwxyz'
   for (let i = 0; i < limit; i++) {
@@ -94,12 +94,12 @@ const compareString = (value, value2) => {
   return lowerCase(value) === lowerCase(value2)
 }
 
-export const compareNumber = (value, value2) => {
-  return parseFloat(value) === parseFloat(value2)
+const compareNumber = (value, value2) => {
+  return parseFloat(value) >= parseFloat(value2)
 }
 
 // Convert 2e8 to real number
-export const scientificToDecimal = (num) => {
+const scientificToDecimal = (num) => {
   const sign = Math.sign(num)
   // if the number is in scientific notation remove it
   if (/\d+\.?\d*e[\+\-]*\d+/i.test(num)) {
