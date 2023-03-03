@@ -65,6 +65,15 @@ const generateRandom = (limit = 16, isNumber) => {
   return text
 }
 
+const generateRandomId = (number = 16) => {
+  let text = ''
+  const possible = 'abcdefghijklmnopqrstuvwxyz'
+  for (let i = 0; i < number; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length))
+  }
+  return text
+}
+
 const generateDeviceID = (key) => {
   const idV4 = uuid.v4()
   return { id: uuid.v5(key, idV4), public: idV4 }
@@ -147,6 +156,7 @@ const validateNumber = (strNumber) => {
 export default {
   compareNumber,
   compareString,
+  generateRandomId,
   validateEmail,
   countDots,
   validateNumber,
