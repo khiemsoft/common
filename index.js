@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-escape */
 import numeral from 'numbro'
+import moment from 'moment'
 import uuid from 'uuid'
 
 const lowerCase = (value) => {
@@ -135,6 +136,11 @@ const scientificToDecimal = (num) => {
   return num
 }
 
+
+const addDayMoment = (dateSelect = new Date(), type = 'days', num = 1) => {
+  return moment(new Date(dateSelect)).add(num, type)
+}
+
 const validateEmail = (email) => {
   if (email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -154,6 +160,7 @@ const validateNumber = (strNumber) => {
 }
 
 export default {
+  addDayMoment,
   compareNumber,
   compareString,
   generateRandomId,
